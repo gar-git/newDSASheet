@@ -1,0 +1,43 @@
+// character hashing basic example
+
+/*
+inputs:
+abcdeabze  -> string given
+3          -> number of characters to find
+a          -> character 1 to find
+x          -> character 2 to find
+z          -> character 3 to find
+*/
+
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc= new Scanner(System.in);
+	    String q = sc.next();
+	    
+	    //precomputation for hashing
+	    
+	    int hash[] = new int[26];
+	    Arrays.fill(hash, 0);
+	    
+	    for(int i = 0; i<q.length();i++){
+	   hash[q.charAt(i)-'a']++;
+	    }
+	     int num = sc.nextInt();
+	    while(num-- > 0){
+	        int alpha = sc.next().charAt(0);
+	        
+	        System.out.println(hash[alpha -'a']);
+	    }
+	}
+}
+
+
+/*
+Output
+2
+0
+1
+*/
